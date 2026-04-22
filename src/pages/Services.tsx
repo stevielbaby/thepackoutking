@@ -1,5 +1,5 @@
 
-import { PackageSearch, Warehouse, Truck, Box, Droplets, Sparkles } from 'lucide-react';
+import { PackageSearch, Warehouse, Truck, Box } from 'lucide-react';
 
 export default function Services() {
   return (
@@ -31,24 +31,6 @@ export default function Services() {
               <div className="service-icon"><Truck size={32}/></div>
               <h3>Pack Back Services</h3>
               <p>Timely redelivery and precise restaging of property once home restoration is fully complete.</p>
-            </div>
-          </div>
-
-          <div className="section-header text-center" style={{ marginTop: '5rem' }}>
-             <h2>Specialized Restoration Cleaning</h2>
-             <p>Complete care for complex or heavily affected items.</p>
-          </div>
-
-          <div className="services-grid" style={{ marginBottom: '4rem' }}>
-            <div className="service-card" style={{ borderTop: '4px solid var(--color-brand-gold)' }}>
-              <div className="service-icon"><Droplets size={32}/></div>
-              <h3>Textile & Odor Treatment</h3>
-              <p>Professional ozone and hydroxyl treatments to eliminate smoke and water odors embedded in clothing or soft goods.</p>
-            </div>
-            <div className="service-card" style={{ borderTop: '4px solid var(--color-brand-gold)' }}>
-              <div className="service-icon"><Sparkles size={32}/></div>
-              <h3>Electronics & Appliances</h3>
-              <p>Expert evaluation, cleaning, and testing of high-value electronics and household appliances before return.</p>
             </div>
           </div>
 
