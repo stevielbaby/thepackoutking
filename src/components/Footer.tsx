@@ -16,8 +16,12 @@ export default function Footer() {
         </div>
         <div className="footer-contact">
            <h3>Contact Us</h3>
-           <p>Mesa, Arizona HQ</p>
-           <p className="flex-align"><Phone size={16}/> 1-800-PACK-KING</p>
+           <p>135 N. Center #145</p>
+           <p>Mesa, AZ 85201</p>
+           <p className="flex-align">
+             <Phone size={16} aria-hidden />
+             <a href="tel:+14808050555" style={{ color: 'inherit' }}>480-805-0555</a>
+           </p>
         </div>
       </div>
       <div className="footer-bottom">

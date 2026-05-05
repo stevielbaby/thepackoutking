@@ -32,7 +32,9 @@ export default function Contact() {
                 <Phone className="text-gold" size={24} />
                 <div>
                   <h4>Call Us 24/7</h4>
-                  <p>1-800-PACK-KING</p>
+                  <p>
+                    <a href="tel:+14808050555" style={{ color: 'inherit' }}>480-805-0555</a>
+                  </p>
                 </div>
               </div>
               <div className="info-card">
@@ -46,7 +48,11 @@ export default function Contact() {
                 <MapPin className="text-gold" size={24} />
                 <div>
                   <h4>Headquarters</h4>
-                  <p>Mesa, Arizona (Serving Greater Phoenix area)</p>
+                  <p>135 N. Center #145</p>
+                  <p>Mesa, AZ 85201</p>
+                  <p style={{ marginTop: '0.5rem', color: 'var(--color-text-secondary)', fontSize: '0.9rem' }}>
+                    Serving the Greater Phoenix area
+                  </p>
                 </div>
               </div>
             </div>

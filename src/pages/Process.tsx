@@ -29,7 +29,10 @@ export default function Process() {
 
           <div className="text-center" style={{marginTop: '4rem'}}>
             <h2>Need Immediate Assistance?</h2>
-            <p className="mt-4" style={{fontSize: '1.2rem', fontWeight: 'bold'}}>Call 1-800-PACK-KING</p>
+            <p className="mt-4" style={{fontSize: '1.2rem', fontWeight: 'bold'}}>
+              Call{' '}
+              <a href="tel:+14808050555" style={{ color: 'var(--color-brand-gold)' }}>480-805-0555</a>
+            </p>
             <p>We are available 24/7 for emergency dispatch.</p>
           </div>
         </div>
