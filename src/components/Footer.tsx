@@ -6,7 +6,13 @@ export default function Footer() {
       <div className="container footer-content">
         <div className="footer-brand">
           <div className="nav-brand" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-            <img className="brand-logo" src="/logo.svg" alt="The Pack Out King Logo" style={{ height: '40px', width: 'auto', borderRadius: '4px' }} />
+            <span className="footer-logo-mark">
+              <img
+                className="footer-logo-img"
+                src="/logo.png"
+                alt="THE PACKOUT KING logo featuring a crowned lion"
+              />
+            </span>
             <span>The Pack Out King</span>
           </div>
           <p>Compassionate, accurate, and professional contents restoration logistics.</p>

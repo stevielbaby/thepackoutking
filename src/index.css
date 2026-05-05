@@ -153,9 +153,24 @@ img {
   padding: 2px;
   box-sizing: content-box;
 }
-/* White mark reads on burgundy bar; on light footer, render as a dark mark */
-.footer .brand-logo {
-  filter: brightness(0);
+
+/* White-on-black PNG mark on light footer: dark tile preserves contrast */
+.footer-logo-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #0a0a0a;
+  border-radius: var(--radius-md);
+  padding: 4px 8px;
+  flex-shrink: 0;
+  line-height: 0;
+}
+.footer-logo-img {
+  display: block;
+  height: 40px;
+  width: auto;
+  max-width: min(200px, 52vw);
+  object-fit: contain;
 }
 .text-gold { color: var(--color-brand-gold); }
 .text-accent { color: var(--color-brand-gold); }
