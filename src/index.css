@@ -858,6 +858,27 @@ img {
   background: var(--color-bg-base);
   box-shadow: 0 0 0 3px rgba(92, 26, 27, 0.14);
 }
+.contact-honeypot {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+.form-error {
+  margin: 0;
+  padding: 0.85rem 1rem;
+  border-radius: var(--radius-md);
+  background: rgba(92, 26, 27, 0.08);
+  border: 1px solid rgba(92, 26, 27, 0.35);
+  color: var(--color-brand-navy);
+  font-size: 0.95rem;
+}
+.form-error a {
+  color: var(--color-brand-gold);
+  font-weight: 600;
+}
 .success-message {
   text-align: center;
   padding: 4rem 2rem;

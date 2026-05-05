@@ -1,20 +1,48 @@
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
 
+const CONTACT_INBOX = 'info@thepackoutking.com';
+const FORMSUBMIT_AJAX_URL = `https://formsubmit.co/ajax/${encodeURIComponent(CONTACT_INBOX)}`;
+
 export default function Contact() {
   const [formData, setFormData] = useState({
     name: '', email: '', phone: '', role: 'homeowner', message: ''
   });
-  const [status, setStatus] = useState<'idle' | 'submitted'>('idle');
+  const [honeypot, setHoneypot] = useState('');
+  const [status, setStatus] = useState<'idle' | 'submitting' | 'submitted' | 'error'>('idle');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Simulate form submission
-    setStatus('submitted');
-    setTimeout(() => {
-      setStatus('idle');
+    if (honeypot) return;
+
+    setStatus('submitting');
+    try {
+      const res = await fetch(FORMSUBMIT_AJAX_URL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          role: formData.role,
+          message: formData.message,
+          _replyto: formData.email,
+          _subject: `Website contact — ${formData.name}`,
+          _captcha: false,
+        }),
+      });
+      if (!res.ok) throw new Error('Request failed');
+      const data = (await res.json()) as { success?: string; error?: string };
+      if (data.error) throw new Error(data.error);
+      setStatus('submitted');
       setFormData({ name: '', email: '', phone: '', role: 'homeowner', message: '' });
-    }, 3000);
+      setTimeout(() => setStatus('idle'), 5000);
+    } catch {
+      setStatus('error');
+    }
   };
 
   return (
@@ -66,6 +94,23 @@ export default function Contact() {
                 </div>
              ) : (
                 <form className="contact-form" onSubmit={handleSubmit}>
+                  <div className="contact-honeypot" aria-hidden="true">
+                    <label htmlFor="contact-company-website">Company website</label>
+                    <input
+                      id="contact-company-website"
+                      type="text"
+                      tabIndex={-1}
+                      autoComplete="off"
+                      value={honeypot}
+                      onChange={(e) => setHoneypot(e.target.value)}
+                    />
+                  </div>
+                  {status === 'error' && (
+                    <p className="form-error" role="alert">
+                      Something went wrong. Please try again or email us at{' '}
+                      <a href={`mailto:${CONTACT_INBOX}`}>{CONTACT_INBOX}</a>.
+                    </p>
+                  )}
                   <div className="form-group">
                     <label>Full Name</label>
                     <input type="text" required value={formData.name} onChange={e => setFormData({...formData, name: e.target.value})} placeholder="John Doe" />
@@ -97,8 +142,13 @@ export default function Contact() {
                     <textarea required rows={4} value={formData.message} onChange={e => setFormData({...formData, message: e.target.value})} placeholder="Please describe the property size and situation..."></textarea>
                   </div>
 
-                  <button type="submit" className="btn btn-primary" style={{ width: '100%', marginTop: '1rem' }}>
-                    <Send size={18} /> Send Message
+                  <button
+                    type="submit"
+                    className="btn btn-primary"
+                    style={{ width: '100%', marginTop: '1rem' }}
+                    disabled={status === 'submitting'}
+                  >
+                    <Send size={18} /> {status === 'submitting' ? 'Sending…' : 'Send Message'}
                   </button>
                 </form>
              )}
