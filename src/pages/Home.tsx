@@ -4,7 +4,7 @@ import TrustBar from '../components/TrustBar';
 export default function Home() {
   return (
     <main>
-      <header className="hero section-padding" style={{ minHeight: 'calc(100vh - 80px)' }}>
+      <header className="hero section-padding">
        <div className="hero-bg">
            {/* Using the practical residential packout image */}
            <img src="/residential-packout.png" alt="Careful residential furniture protection" className="bg-img" />

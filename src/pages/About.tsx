@@ -3,7 +3,7 @@ import { Target, Eye, Truck, Warehouse, CheckCircle, HeartHandshake } from 'luci
 
 export default function About() {
   return (
-    <main className="page-wrapper" style={{ paddingTop: '100px', backgroundColor: 'var(--color-bg-alt)' }}>
+    <main className="page-wrapper page-wrapper--muted">
       {/* Hero Section */}
       <section className="section-padding" style={{ backgroundColor: 'white', borderBottom: '1px solid var(--color-bg-accent)' }}>
         <div className="container">

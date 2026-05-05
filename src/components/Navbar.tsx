@@ -27,7 +27,7 @@ export default function Navbar() {
     <nav className="navbar">
       <div className="container navbar-row">
         <Link to="/" className="nav-brand" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-          <img className="brand-logo" src="/logo.svg" alt="The Pack Out King Logo" style={{ height: '80px', width: 'auto', borderRadius: '0px', marginTop: '-8px' }} />
+          <img className="brand-logo nav-brand-logo" src="/logo.png" alt="The Pack Out King Logo" />
         </Link>
         <button
           type="button"

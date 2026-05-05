@@ -2,7 +2,7 @@
 
 export default function Process() {
   return (
-    <main className="page-wrapper" style={{ paddingTop: '100px', minHeight: '80vh' }}>
+    <main className="page-wrapper">
       <section className="section-padding">
         <div className="container">
           <div className="section-header text-center">
@@ -10,7 +10,7 @@ export default function Process() {
              <p>A seamless, secure transition from start to finish.</p>
           </div>
           
-          <div style={{ maxWidth: '800px', margin: '0 auto', padding: '2rem', background: 'var(--color-bg-alt)', borderRadius: '16px' }}>
+          <div className="process-steps-card">
              <h3 style={{ color: 'var(--color-brand-gold)' }}>1. Dispatch & Onsite Assessment</h3>
              <p style={{marginBottom: '1.5rem'}}>Our highly trained crews arrive promptly. We assess the environment, set up protective barriers to prevent secondary damage, and establish a digital staging area.</p>
 
@@ -27,7 +27,7 @@ export default function Process() {
              <p style={{marginBottom: '1.5rem'}}>Once complete, we return, unwrap, and reset the property exactly as it was, providing a definitive sign-off that the items were protected.</p>
           </div>
 
-          <div className="text-center" style={{marginTop: '4rem'}}>
+          <div className="text-center process-cta-block">
             <h2>Need Immediate Assistance?</h2>
             <p className="mt-4" style={{fontSize: '1.2rem', fontWeight: 'bold'}}>
               Call{' '}

@@ -3,7 +3,7 @@ import { PackageSearch, Warehouse, Truck, Box } from 'lucide-react';
 
 export default function Services() {
   return (
-    <main className="page-wrapper" style={{ paddingTop: '100px' }}>
+    <main className="page-wrapper">
       <section className="services section-padding">
         <div className="container">
           <div className="section-header text-center">

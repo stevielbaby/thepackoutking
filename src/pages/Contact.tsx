@@ -18,8 +18,8 @@ export default function Contact() {
   };
 
   return (
-    <div className="section-padding" style={{ backgroundColor: 'var(--color-bg-base)' }}>
-      <div className="container" style={{ paddingTop: '60px' }}>
+    <div className="contact-page section-padding" style={{ backgroundColor: 'var(--color-bg-base)' }}>
+      <div className="container contact-page-inner">
         <div className="contact-layout">
           <div className="contact-info">
             <h1 className="hero-title" style={{ color: 'var(--color-brand-navy)' }}>Get In Touch</h1>

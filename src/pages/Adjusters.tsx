@@ -3,7 +3,7 @@ import { Shield, FileText, Truck, Download } from 'lucide-react';
 
 export default function Adjusters() {
   return (
-    <main className="page-wrapper" style={{ paddingTop: '100px' }}>
+    <main className="page-wrapper">
       <section className="adjuster-advantage section-padding">
         <div className="container adjuster-layout">
           <div className="adjuster-text">
@@ -31,7 +31,7 @@ export default function Adjusters() {
              <h2>Vendor Onboarding & Resources</h2>
              <p>Instant access to our credentials and standardized documentation.</p>
           </div>
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1.5rem', justifyContent: 'center', marginTop: '3rem' }}>
+          <div className="adjuster-resource-row">
              <button className="btn btn-secondary" onClick={() => alert('Placeholder: COI.pdf expected here.')}>
                <Download size={18} /> Certificate of Insurance
              </button>
